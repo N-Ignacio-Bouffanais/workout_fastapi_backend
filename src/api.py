@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers.users import users_router
-from routers.items import items_router
-
+from .auth.router import users_router
+from .api.router import items_router
 
 app = FastAPI(
     title="Social media app with fast API",
