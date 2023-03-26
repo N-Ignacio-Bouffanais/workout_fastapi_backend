@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from routers.users import users_router
+from routers.items import items_router
 
 
 app = FastAPI(
@@ -12,6 +14,9 @@ app = FastAPI(
         "email": "nicolas.bouffanais.1999@gmail.com",
     },
 )
+app.include_router(users_router)
+app.include_router(items_router)
+
 # I need to change this later to merge the backend with the frontend
 origins = [
     "http://localhost:3000",
