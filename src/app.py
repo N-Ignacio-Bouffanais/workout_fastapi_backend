@@ -1,13 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .auth.router import users_router
-from .api.router import items_router
+from .api.router import routines_router
 from .auth import models
 from .auth import schemas
-from database import engine
 
-
-models.Base.metadata.create_all(engine)
 
 app = FastAPI(
     title="Social media app with fast API",
@@ -20,7 +17,7 @@ app = FastAPI(
     },
 )
 app.include_router(users_router)
-app.include_router(items_router)
+app.include_router(routines_router)
 
 # I need to change this later to merge the backend with the frontend
 origins = [
