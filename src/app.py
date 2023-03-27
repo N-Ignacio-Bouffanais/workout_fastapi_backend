@@ -2,6 +2,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .auth.router import users_router
 from .api.router import items_router
+from .auth import models
+from .auth import schemas
+from database import engine
+
+
+models.Base.metadata.create_all(engine)
 
 app = FastAPI(
     title="Social media app with fast API",
