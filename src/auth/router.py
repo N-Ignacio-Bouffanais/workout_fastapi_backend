@@ -1,10 +1,10 @@
 from fastapi import APIRouter
 from .schemas import User_Schema
 
-users_router = APIRouter(
+users = APIRouter(
     tags=["users"],
 )
 
-@users_router.post('/login')
+@users.post('/login')
 def login(user: User_Schema):
     return user

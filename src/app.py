@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .auth.router import users_router
-from .api.router import routines_router
+from .auth.router import users
+from .api.router import routines
 from .auth import models
 from .auth import schemas
 
@@ -16,8 +16,8 @@ app = FastAPI(
         "email": "nicolas.bouffanais.1999@gmail.com",
     },
 )
-app.include_router(users_router)
-app.include_router(routines_router)
+app.include_router(users)
+app.include_router(routines)
 
 # I need to change this later to merge the backend with the frontend
 origins = [

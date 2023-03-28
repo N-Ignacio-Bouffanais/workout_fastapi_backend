@@ -9,6 +9,12 @@
 - Conda
 - Swagguer documentation
 
+## Notes
+- when using Docker you can run a mysql database with the following command
+- docker run -e MYSQL_ROOT_PASSWORD=yourpassword --name namedb mysql
+- after that you can run the following command to execute the image
+- docker exec -it namedb bash
+
 ## Author
 
 - Website - [Nicolas_Bouffanais](https://nicolas-bouffanais.vercel.app/src/index.html)
